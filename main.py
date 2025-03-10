@@ -4,11 +4,15 @@ import numpy as np
 from perceptron import Perceptron
 
 """
-The values from [1:] represent the intensity of each of the four squares
-in a 2x2 image in the following order:
+The array below represents all configurations that a 2x2 image in which the 
+squares can be either "dark" or "light" can be in.
+
+The first value in each row represents the unit input for the bias
+The values from [1:] in each row represent the intensity of each of the four squares
+in the 2x2 image in the following order:
 top-right, top-left, bottom-right, bottom-left.
+
 1 represents "dark", and 0 represents "light".
-The first value represents the unit input for the bias
 """
 inputs = np.array([
     [1, 0, 0, 0, 0],
@@ -39,7 +43,8 @@ for i, input_vector in enumerate(inputs):
 
 df = pd.DataFrame(
     inputs,
-    columns=["Threshold", "Top-left", "Top-right", "Bottom-left", "Bottom-right"],
+    columns=["Threshold", "Top-left", "Top-right",
+             "Bottom-left", "Bottom-right"],
     dtype=np.bool)
 df["results"] = targets
 print(df)
