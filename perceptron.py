@@ -6,12 +6,14 @@ import numpy as np
 def hard_lim(v: int):
     return 1 if v >= 0 else 0
 
+
 class Perceptron:
     MAX_EPOCHS = 100
 
     def __init__(self, inputs: np.array, targets: np.array, learning_rate=0.1):
         if inputs.shape[0] != targets.shape[0]:
-            raise ValueError("inputs and targets must have same number of rows")
+            raise ValueError(
+                "inputs and targets must have same number of rows")
         if targets.ndim != 1:
             raise ValueError("targets must have only 1 dimension")
 
@@ -43,7 +45,7 @@ class Perceptron:
                 print("Error removed in all examples!")
                 break
 
-        print("\nTraining complete.\n")
+        print(f"\nTraining complete or {self.MAX_EPOCHS} epochs done.\n")
 
         return self
 
@@ -55,4 +57,3 @@ class Perceptron:
             output[i] = actual
 
         return output
-
