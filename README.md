@@ -18,7 +18,7 @@ pip install -r requirements.txt
 pytest
 ```
 
-# with conda
+# With conda
 
 ```bash
 # Create virtual environment
